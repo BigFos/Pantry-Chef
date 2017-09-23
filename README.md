@@ -1,2 +1,2 @@
-# Recipe-Search
-Project 1 for Coding Bootcamp
+# Pantry-Chef
+Project 3 for Coding Bootcamp
