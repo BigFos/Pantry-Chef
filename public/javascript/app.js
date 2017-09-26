@@ -92,10 +92,12 @@ $(document).ready(function() {
                 var cardActionDiv = '<div class=card-action>' + '<ul>' + ingredientListFromApi + '</ul></div>';
 
                 var recipeUrl = '<a id="list" href="' + result.url + '" target="_blank">' + "Instructions" + '</a>';
+
+                var saveRecipe = '<a id="saveRec" href="#">' + "Save" + '</a>';
                
 
                 $("#hide").hide();
-                $("#recipeCards").append('<div class="card">' + recipeImage + recipeLabel + cardActionDiv + recipeUrl + '</div>');
+                $("#recipeCards").append('<div class="card">' + recipeImage + recipeLabel + cardActionDiv + recipeUrl + saveRecipe + '</div>');
 
 
             } 
