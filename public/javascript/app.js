@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var React = require("React");
+    var React = require("react");
 
     $('.dropdown-button').dropdown();
     $('.modal').modal();
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     var clear = "";
 
-    React.render(<a id="logout" href="/logout" className="btn btn-default btn-sm">Logout</a>, document.getElementById('logoutbutton'));
+    ReactDOM.render(<a id="logout" href="/logout" className="btn btn-default btn-sm">Logout</a>, document.getElementById('logoutbutton'));
 
     $("#ingredientAdd").on("click", function() {
         var input = $("#ingredientInput").val().trim();
