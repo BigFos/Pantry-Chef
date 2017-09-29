@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    var React = require("react");
-
+    
     $('.dropdown-button').dropdown();
     $('.modal').modal();
     $('.tooltipped').tooltip({ delay: 50 });
@@ -22,15 +21,7 @@ $(document).ready(function() {
 
     var ingredientArray = [];
 
-
     var clear = "";
-
-    ReactDOM.render(React.createElement(
-  "a",
-  { id: "logout", href: "/logout", className: "btn btn-default btn-sm" },
-  "Logout"
-), document.getElementById('logoutbutton'));
-    // ReactDOM.render(<a id="logout" href="/logout" className="btn btn-default btn-sm">Logout</a>, document.getElementById('logoutbutton'));
 
     $("#ingredientAdd").on("click", function() {
         var input = $("#ingredientInput").val().trim();
