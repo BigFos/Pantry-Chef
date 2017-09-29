@@ -1,8 +1,9 @@
 $(document).ready(function() {
+    var React = require("React");
 
     $('.dropdown-button').dropdown();
-     $('.modal').modal();
-      $('.tooltipped').tooltip({delay: 50});
+    $('.modal').modal();
+    $('.tooltipped').tooltip({ delay: 50 });
 
 
     // Initialize Firebase
@@ -20,16 +21,17 @@ $(document).ready(function() {
     var database = firebase.database();
 
     var ingredientArray = [];
-    
+
 
     var clear = "";
 
+    React.render(<a id="logout" href="/logout" className="btn btn-default btn-sm">Logout</a>, document.getElementById('logoutbutton'));
 
     $("#ingredientAdd").on("click", function() {
         var input = $("#ingredientInput").val().trim();
         $("#ingredientInput").val("");
         console.log("input: ", input);
-        var ingredients = '<li class="chip green" id="'+ input + '">' + input + '<i class="close material-icons">close</i></li>'
+        var ingredients = '<li class="chip green" id="' + input + '">' + input + '<i class="close material-icons">close</i></li>'
         console.log("ingredients: ", ingredients);
         $("#ingredientList").append(ingredients);
         ingredientArray.push(input);
@@ -40,7 +42,7 @@ $(document).ready(function() {
 
         $("#ingredientInput").val("");
 
-        $("#"+input).on("click", function() {
+        $("#" + input).on("click", function() {
             var food = input;
             var slice = ingredientArray.indexOf(food);
             ingredientArray.splice(slice, 1);
@@ -94,18 +96,18 @@ $(document).ready(function() {
                 var recipeUrl = '<a id="list" href="' + result.url + '" target="_blank">' + "Instructions" + '</a>';
 
                 var saveRecipe = '<a id="saveRec" href="#">' + "Save" + '</a>';
-               
+
 
                 $("#hide").hide();
                 $("#recipeCards").append('<div class="card">' + recipeImage + recipeLabel + cardActionDiv + recipeUrl + saveRecipe + '</div>');
 
 
-            } 
+            }
             database.ref().push({
                 Ingredient: ingredientArray
             });
-            if(response.count==0){
-                $("#recipeCards").append("<div id='na'>" + "Nothing Found :( Please try specifying/limiting your search" + "</div>" );
+            if (response.count == 0) {
+                $("#recipeCards").append("<div id='na'>" + "Nothing Found :( Please try specifying/limiting your search" + "</div>");
             }
         });
         console.log(queryURLR);
@@ -114,14 +116,13 @@ $(document).ready(function() {
         $("#hide").show();
     });
 
-$("#resetButton").on("click",function() {
- ingredientArray = [];
-    
-    $("#recipeCards").empty();
-    console.log(ingredientArray);
-    $("#ingredientList").empty();
+    $("#resetButton").on("click", function() {
+        ingredientArray = [];
+
+        $("#recipeCards").empty();
+        console.log(ingredientArray);
+        $("#ingredientList").empty();
 
     });
 
 });
-
