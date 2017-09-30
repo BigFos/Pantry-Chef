@@ -93,11 +93,11 @@ $(document).ready(function() {
 
                 var recipeUrl = '<a id="list" href="' + result.url + '" target="_blank">' + "Instructions" + '</a>';
 
-                var saveRecipe = '<a id="saveRec" href="#">' + "Save" + '</a>';
+                // var saveRecipe = '<a id="saveRec" href="#">' + "Save" + '</a>';
                
 
                 $("#hide").hide();
-                $("#recipeCards").append('<div class="card">' + recipeImage + recipeLabel + cardActionDiv + recipeUrl + saveRecipe + '</div>');
+                $("#recipeCards").append('<div class="card">' + recipeImage + recipeLabel + cardActionDiv + recipeUrl + '</div>');
 
 
             } 
