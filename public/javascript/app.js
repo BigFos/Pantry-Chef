@@ -4,7 +4,6 @@ $(document).ready(function() {
     $('.modal').modal();
     $('.tooltipped').tooltip({ delay: 50 });
 
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDPfYzQy3MaKGqQbEUWplRbldAMNMTdIOo",
